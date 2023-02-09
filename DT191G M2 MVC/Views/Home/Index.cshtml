@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "Startsidan";
+}
+
+<div class="title">
+    <h2>Hello!</h2>
+</div>
+
+<div class="flex-container column">
+    <p class="centered">Who are you?</p>
+
+        <form action="/home/index" method="post">
+            <label for="username">Please tell us your name.</label>
+            <input type="text" id="username" name="username" />
+            <input type="submit" name="Add Cookie" />
+        </form>
+
+    <p class="message">@ViewBag.message</p>
+    @*<p class="message">ViewBag.messageCookies: @ViewBag.messageCookies</p>*@
+    
+</div>

@@ -1,0 +1,65 @@
+[
+  {
+    "Title": "HTML, PHP & CSS",
+    "Description": "This website is built for an HTML&CSS course, which became a project for my brothers rental. The site is built on HTML, PHP, CSS and JavaScript.",
+    "Link": "http://sherkstonshoresvacation.com/",
+    "ImgLink": "sherkstonshores.jpeg",
+    "Keywords": "1",
+    "Year": "2021/22",
+    "Grade": "B"
+  },
+  {
+    "Title": "OPHP",
+    "Description": "This website is built with HTML, CSS, JavaScript & object-oriented PHP as well as data is stored in a database.",
+    "Link": "https://nataliesalomons.com/miun/dt093g/projekt/index.php",
+    "ImgLink": "sweets.jpeg",
+    "Keywords": "2",
+    "Year": "2021/22",
+    "Grade": "B"
+  },
+  {
+    "Title": "Wordpress & Elementor",
+    "Description": "A personal project for my wedding photography which I have built on Wordpress with the building plugin Elementor.",
+    "Link": "https://www.nataliesalomons.com/",
+    "ImgLink": "weddings.jpeg",
+    "Keywords": "3",
+    "Year": "2021/22",
+    "Grade": null
+  },
+  {
+    "Title": "Wordpress & Elementor",
+    "Description": "This website is built for a friend on Wordpress with Elementor. The logo is also my design.",
+    "Link": "https://www.holisticawareness.se/",
+    "ImgLink": "holisticawareness.jpg",
+    "Keywords": "4",
+    "Year": "2021/22",
+    "Grade": null
+  },
+  {
+    "Title": "Custom WordPress Theme",
+    "Description": "This website was first built in HTML & CSS, afterwhich was converted to a dynamic Wordpress theme.",
+    "Link": "https://nataliesalomons.com/miun/dt197g/project/",
+    "ImgLink": "wptheme.jpg",
+    "Keywords": "1",
+    "Year": "2021/22",
+    "Grade": "A"
+  },
+  {
+    "Title": "MERN Stack",
+    "Description": "This website is built on the MERN stack, meaning it is built with MongoDB, Express, Node.js and React. It is a simple contact list app.",
+    "Link": "https://javascript-react-miun-app.herokuapp.com/",
+    "ImgLink": "mern.jpg",
+    "Keywords": "2",
+    "Year": "2022/23",
+    "Grade": "B"
+  },
+  {
+    "Title": "Test",
+    "Description": "Description",
+    "Link": "https://localhost:7292/portfolio",
+    "ImgLink": null,
+    "Keywords": "2",
+    "Year": "2021/22",
+    "Grade": "C"
+  }
+]

@@ -1,0 +1,73 @@
+﻿@model DT191G_M2_MVC.Models.PortfolioModel
+@{
+    // Layout = "_Layout"; // for a specific layout
+    ViewData["Title"] = "Add to Portfolio";
+}
+
+<div class="title">
+    <h2>@ViewData["Title"]</h2>
+   
+</div>
+
+<div class="flex-container">
+
+    <form method="post">
+        <p>Add a Project to the Portfolio</p>
+        @*could add asp-action="Create"- add a function/method in Controller file that adds the project, but instead do it directly from HomeController file*@ 
+        @*<div asp-validation-summary="All"></div>*@
+            <div asp-validation-summary="ModelOnly"></div>
+            @*<label asp-for="Title"></label>*@
+            <input asp-for="Title">
+            <span asp-validation-for="Title"></span>
+            <br />
+            @*<label asp-for="Description"></label>*@
+            <input asp-for="Description">
+            <span asp-validation-for="Description"></span>
+            <br />
+            @*<label asp-for="Link"></label>*@
+            <input asp-for="Link">
+            <span asp-validation-for="Link"></span>
+            <br />
+            @*<label asp-for="imgLink"></label>*@
+            <input asp-for="ImgLink">
+            <span asp-validation-for="ImgLink"></span>
+            <br />
+            <label asp-for="Keywords">Choose a category:</label>
+            <select asp-for="Keywords">
+                <option value="1">Frontend Development</option>
+                <option value="2">Framework</option>
+                <option value="3">Design & Accessibility</option>
+                <option value="4">Web API</option>
+            </select>
+
+            <label asp-for="Year">What year:</label>
+            <div class="flex-container">
+                <fieldset>
+                    <input asp-for="Year"
+                           type="radio"
+                           value="2021/22" />
+                    <label>2021/22</label>
+                </fieldset>
+                <fieldset>
+                    <input asp-for="Year"
+                           type="radio"
+                           value="2022/23" />
+                    <label>2022/23</label>
+                </fieldset>
+            </div>
+        <label asp-for="Grade">Recieved grade:</label>
+        <div class="flex-container">
+            <fieldset><input asp-for="Grade" type="checkbox" value="A" /><label>A</label></fieldset>
+            <fieldset><input asp-for="Grade" type="checkbox" value="B" /><label>B</label></fieldset>
+            <fieldset><input asp-for="Grade" type="checkbox" value="C" /><label>C</label></fieldset>
+            <fieldset><input asp-for="Grade" type="checkbox" value="D" /><label>D</label></fieldset>
+            <fieldset><input asp-for="Grade" type="checkbox" value="E" /><label>E</label></fieldset>
+        </div>
+
+
+
+            <input type="submit" value="Add Project">
+
+
+        </form>
+</div>

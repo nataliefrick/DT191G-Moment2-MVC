@@ -1,0 +1,83 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - DT191G_M2_MVC</title>
+
+    <!-- Styling -->
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    @*<link rel="stylesheet" href="~/DT191G_M2_MVC.styles.css" asp-append-version="true" />*@
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="~/img/favicon-32x32.png">
+</head>
+<body>
+    <header>
+        <div id="logo"> <a asp-area="" asp-page="/Index"><img src="~/img/logo2.png" /></a></div>
+
+       @if (ViewBag.name != null ) {
+         <div id="visitor">
+                <h4>Hello @ViewBag.name </h4>
+                <a asp-controller="Home" asp-action="DeleteCookie">Say Goodbye</a>
+         </div>
+        }
+
+        <!-- navbar -->
+        <nav>
+            <!-- Main Navbar Full Screen -->
+            <div id="navbar-header" class="navbar-collapse collapse">
+                <a class="nav-link" asp-controller="Home" asp-action="Index">Index</a>
+                <a class="nav-link" asp-controller="Home" asp-action="About">About</a>
+                <a class="nav-link" asp-controller="Home" asp-action="SeePortfolio">Portfolio</a>
+                <a class="nav-link" asp-controller="Home" asp-action="Projects">Projects</a>
+                <a class="nav-link" asp-controller="Home" asp-action="Portfolio">Add</a>
+            </div>
+
+            <!-- Mobil Navbar Small Screen -->
+            <div class="navbar-toggler">
+                <!-- The overlay -->
+                <div id="myNav" class="overlay">
+
+                    <!-- Button to close the overlay navigation -->
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+                    <!-- Overlay content -->
+                    <div class="overlay-content">
+                        <a asp-controller="Home" asp-action="Index">Start</a>
+                        <a asp-controller="Home" asp-action="About">About</a>
+                        <a asp-controller="Home" asp-action="SeePortfolio">Portfolio</a>
+                        <a asp-controller="Home" asp-action="Projects">Projects</a>
+                        <a asp-controller="Home" asp-action="Portfolio">Add</a>
+                    </div>
+                </div>
+
+                <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+                <a href="javascript:void(0);" class="icon navbar-toggler" onclick="openNav()">
+                    <i class="fa fa-bars"></i>
+                </a>
+
+            </div>
+        </nav>
+    </header>
+
+    <main role="main" class="">
+            @RenderBody()
+    </main>
+
+
+    <footer class="footer centered">
+        <div>Natalie Salomons Frick</div>
+        <div>DT191G Datateknik .NET moment 2 MVC</div>
+        <div>nasa2104@student.miun.se</div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

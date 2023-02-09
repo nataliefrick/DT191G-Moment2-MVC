@@ -1,0 +1,45 @@
+﻿@*Pagination tutorial: www.youtube.com/watch?v=T77ppBN9Vsg*@
+
+@model IPagedList<DT191G_M2_MVC.Models.PortfolioModel>
+
+@*@model PagedList.IPagedList<DT191G_M2_MVC.Models.PortfolioModel>*@
+@using PagedList.Mvc;
+@using PagedList.Core.Mvc;
+@using PagedList;
+@using System.Web.Mvc.Html;
+
+@{
+    ViewData["Title"] = "Projects";
+    int nrProjects = Model.Count(); 
+   
+}
+
+<div class="title">
+    <h2>@ViewData["Title"]</h2>
+    <p>Click through the some the projects in my portfolio. (The number of objects in returned list is @nrProjects)</p>
+    
+</div>
+
+
+
+<div class="flex-container">
+
+    @foreach (var project in Model)
+    {
+        @await Html.PartialAsync("_Project", project)
+
+    }
+
+</div>
+<div class="pagination">
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+
+
+    <p class="errormsg">
+        Error CS1929 "IHtmlHelper < IPagedList < PortfolioModel > >" does not contain a definition for 'PagedListPager' and the best extension method overload 'HtmlHelper.PagedListPager(HtmlHelper, IPagedList, Func<int, string>)' requires a receiver of type 'HtmlHelper' 
+        <br /><br />
+        "Html.PagedListPager(Model, page => Url.Action("Projects", 
+        new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.Bag.CurrentFilter })))"
+    </p>
+</div>

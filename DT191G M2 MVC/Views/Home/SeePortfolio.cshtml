@@ -1,0 +1,20 @@
+﻿@model List<DT191G_M2_MVC.Models.PortfolioModel>
+@{
+    ViewData["Title"] = "Portfolio";
+}
+
+<div class="title">
+    <h2>@ViewData["Title"]</h2>
+    <p>Final projects from completed courses as well as real life projects that I have built.</p>
+</div>
+
+<div class="flex-container">
+
+    @foreach (var project in Model)
+    {
+       
+        @await Html.PartialAsync("_Project", project)
+
+    }
+
+</div>

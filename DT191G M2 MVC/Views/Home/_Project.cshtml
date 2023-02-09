@@ -1,0 +1,38 @@
+﻿@*Partial views Tutorial: www.youtube.com/watch?v=SABg7RyjX-4*@
+
+@model DT191G_M2_MVC.Models.PortfolioModel
+@{
+    string keyword = "";
+    switch (Model.Keywords)
+    {
+        case "1": keyword = "Frontend Development"; break;
+        case "2": keyword = "Framework"; break;
+        case "3": keyword = "Design & Accessibility"; break;
+        case "4": keyword = "Web API"; break;
+    }
+
+    string grade = "";
+    @if (@Model.Grade != null)
+    {
+        grade = "| Recieved Grade " + @Model.Grade;
+    }
+}
+
+<div class="portfolio-container hover-overlay">
+@if (@Model.ImgLink != null)
+{
+    <img src="img/@Model.ImgLink" />
+}
+else
+{
+    <img src="img/mockup.jpg" />
+}            
+    <div class="textpart">
+        <h3>@Model.Title</h3>
+        <p>@Model.Description</p>
+        <p class="keywords">Category: @keyword</p>
+        <p class="year">Completed @Model.Year @grade</p>
+        <a class="btn" href="@Model.Link">See the project</a>
+    </div>
+</div>
+

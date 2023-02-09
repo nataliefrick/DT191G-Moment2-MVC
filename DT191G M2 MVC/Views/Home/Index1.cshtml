@@ -1,0 +1,52 @@
+﻿@model List<DT191G_M2_MVC.Models.PortfolioModel>
+@{
+    ViewData["Title"] = "Portfolio";
+    string? keyword = "";
+}
+
+<div class="title">
+    <h2>@ViewData["Title"]</h2>
+    <p>Final projects from completed courses as well as real life projects that I have built.</p>
+</div>
+
+<div class="flex-container">
+
+    @foreach (var project in Model)
+    {
+
+        switch (project.Keywords)
+        {
+            case "1": keyword = "Frontend Development"; break;
+            case "2": keyword = "Framework"; break;
+            case "3": keyword = "Design & Accessibility"; break;
+            case "4": keyword = "Web API"; break;
+        }
+
+        string grade = "";
+        @if (@project.Grade != null)
+        {
+            grade = "| Recieved Grade " + @project.Grade;
+        }
+
+        <div class="portfolio-container hover-overlay">
+            @if (@project.ImgLink != null)
+            {
+                <img src="img/@project.ImgLink" />
+            }
+            else
+            {
+                <img src="img/mockup.jpg" />
+            }
+            <div class="textpart">
+                <h3>@project.Title</h3>
+                <p>@project.Description</p>
+                <p class="keywords">Category: @keyword</p>
+                <p class="year">Completed @project.Year @grade</p>
+                <a class="btn" href="@project.Link">See the project</a>
+            </div>
+        </div>
+
+    }
+
+</div>
+

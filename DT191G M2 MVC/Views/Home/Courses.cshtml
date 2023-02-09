@@ -1,0 +1,34 @@
+﻿@model DT191G_M2_MVC.Models.CourseModel
+
+
+@{
+    // Layout = "_Layout"; // for a specific layout
+    ViewData["Title"] = "Courses";
+}
+
+<h2>Add a Course</h2>
+
+<form method="post"> 
+        @*could add asp-action="Create"- add a function/method in Controller file that adds the course, but instead do it directly from HomeController file*@ 
+        @*<div asp-validation-summary="All"></div>*@
+        <div asp-validation-summary="ModelOnly"></div>
+        <label asp-for="Kurskod"></label>
+        <input asp-for="Kurskod">
+        <span asp-validation-for="Kurskod"></span>
+        <br />
+        <label asp-for="Namn"></label>
+        <input asp-for="Namn">
+        <span asp-validation-for="Namn"></span>
+        <br />
+        <label asp-for="Kursplan"></label>
+        <input asp-for="Kursplan">
+        <span asp-validation-for="Kursplan"></span>
+        <br />
+        <label asp-for="Progression"></label>
+        <input asp-for="Progression">
+        <span asp-validation-for="Progression"></span>
+        <br />
+        <input type="submit" value="Add Course">
+
+
+    </form>
